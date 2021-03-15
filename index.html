@@ -1,6 +1,12 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+    <html lang="zh">
     <head>
+	  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+  crossorigin="anonymous"
+/>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -66,15 +72,20 @@
       <div class="box">
         <div class="number">欢迎访问谭炜谭信息科技主页！</div>
         <div class="text">
-          谭炜谭信息科技现有默写大师等知名产品
-        </div>
+          <h4>谭炜谭信息科技现有默写大师等知名产品。</h4> <br>
+		  <a class="font-size:50px">默写大师 是全球领先的轻量级开源默写软件解决方案。极限优化，旧电脑运行依然不会卡顿；完全开源，集全球社区智慧为一身！</a>
+	  </div>
         <div class="btn-container">
-          <a class="btn" id="back">
+          <a class="btn mdui-btn-raised" id="back">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="margin-right: 8px;">
               <path fill="none" d="M0 0h24v24H0z"/>
               <path d="M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z"/>
             </svg>
             访问项目主页
+          </a>
+		  <a class="btn mdui-btn-raised mdui-color-red-400" id="down">
+            <i class="mdui-icon material-icons">&#xe5db;</i>
+            立刻下载最新版默写大师！
           </a>
         </div>
       </div>
@@ -84,6 +95,13 @@
       <script>
         var back = document.getElementById('back')
         back.onclick = function() { console.log('run...'); open("https://github.com/twt-tec/Silent-Writing-Master") }
+		var down = document.getElementById('down')
+        down.onclick = function() { console.log('run...'); open("https://github.com/twt-tec/Silent-Writing-Master/releases/download/4.0/setup.exe") }
       </script>
+	  <script
+  src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+  integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+  crossorigin="anonymous"
+></script>
     </body>
     </html>
