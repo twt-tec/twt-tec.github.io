@@ -748,10 +748,6 @@ body.docs #nav {
   color: #999;
   margin-bottom: 0;
 }
-#sponsors.active img {
-  filter: none;
-  opacity: 1;
-}
 #special-sponsor .become-backer {
   color: #42b983;
   border: 1px solid #42b983;
