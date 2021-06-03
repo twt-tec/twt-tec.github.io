@@ -79,6 +79,11 @@
 body{
 	background-color: white;
 }
+.twt-wr{
+	width: 50%;
+    margin: 0 auto;
+	padding: 0px 0px 50px 0px;
+}
 </style>
   <a id="logo" href="https://twt-tec.github.io/">
     <img src="https://twt-tec.github.io/f.png" alt="vue logo">
@@ -161,6 +166,24 @@ a.button.has-icon.gray{background:#eeeeee	 !important; color:#aaaaaa !important;
 <center><h4 style="font-size:20px"> 最新词库 </h4></center>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+
+<style>
+.gt-container .gt-header-textarea {
+	display:none !important;
+}
+.gt-container .gt-avatar {
+	display:none !important;
+}
+.gt-container .gt-meta {
+	display:none !important;
+}
+.gt-container .gt-header-controls {
+	display:none !important;
+}
+.gt-container .gt-header {
+	display:none !important;
+}
+</style>
 <div id="gitalk-container"></div>     <script type="text/javascript">
     var gitalk = new Gitalk({
 
