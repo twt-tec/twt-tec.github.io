@@ -66,12 +66,41 @@
       <a class="menu-button"></a>
       <a class="logo" href="https://cn.vuejs.org/"></a>
     </div>
+<div>
+<div class="MTB">
+<center>祝谭炜谭信息科技官方团队 Totally Without Thought 在第二届“美团杯”程序设计竞赛中取得好成绩！<center>
+<button class="re" onclick="rem()"> × 关闭</button>
+</div>
+</div>
+<script>
+function rem() {
+	var twt = document.getElementsByClassName("MTB");
+	twt[0].parentNode.removeChild(twt[0]);
+}
+</script>
     <header id="header">
 <style>
-
+.re{
+	color:white;
+	background:#5ac5ac;
+	font-family: "宋体";
+}
+.MTB{
+	background:blue;
+	color:white;
+	padding:5px;
+	font-family: "楷体";
+}
 .buttonred {
     color: white;
     background: red;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 5px;
+}
+.buttonred2 {
+    color: white;
+    background: green;
     padding: 10px;
     border-radius: 15px;
     font-size: 5px;
@@ -92,6 +121,7 @@ body{
   <ul id="nav">
     <li>
 <a class="buttonred"  href="https://www.luogu.com.cn/chat?uid=297566">向老板投诉</a>
+<a class="buttonred2"  href="https://www.luogu.com.cn/chat?uid=297566">向老板捐款</a>
 </li>
 
 
