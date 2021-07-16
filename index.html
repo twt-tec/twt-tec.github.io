@@ -66,12 +66,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="https://cn.vuejs.org/"></a>
     </div>
-<div>
-<div class="MTB">
-<center>祝谭炜谭信息科技官方团队 Totally Without Thought 在第二届“美团杯”程序设计竞赛中取得好成绩！<center>
-<button class="re" onclick="rem()"> × 关闭</button>
-</div>
-</div>
+
 <script>
 function rem() {
 	var twt = document.getElementsByClassName("MTB");
@@ -360,7 +355,7 @@ function clickEffect() {
             }
             this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
             this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
-            this.r = randBetween(8, 12) + 3 * Math.random();
+            this.r = (randBetween(8, 12) + 3 * Math.random())*0.714;
             this.color = colours[Math.floor(Math.random() * colours.length)];
         }
         update() {
