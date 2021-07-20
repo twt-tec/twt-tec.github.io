@@ -78,6 +78,14 @@ let 前面垫话 = [
     "永远无尽的1对2性3角4方5半6中“的”1个宇宙性质模型。",
     "空间道路速度环境“1对内对内2性”身心动力生命时间＝自然环境创造了人类自己任何事物真理：",
 ]
+let 图片 = [
+    "https://pic1.zhimg.com/50/v2-0085211973bbb4e8b29f826e5e1d8f5a_r.jpg",
+    "https://pic3.zhimg.com/50/v2-f8ffaf69d3f422459151feee2184eb50_r.jpg",
+    "https://pic4.zhimg.com/50/v2-805e990e576573bb9a68fa66474c49b7_r.jpg",
+    "https://pic1.zhimg.com/80/v2-1303974720350986c2d015d1a9881b30_720w.jpg",
+    "https://pic2.zhimg.com/50/v2-2a07577f3953127d4c5e278ca7404d90_r.jpg",
+    "https://pic1.zhimg.com/50/v2-d59b4c3c9d6c95dbc29de423991835b1_r.jpg",
+]
 
 function 随便取一句(列表){
     let 坐标 = Math.floor( Math.random() * 列表.length );
@@ -136,6 +144,8 @@ function 生成文章(){
 		if (文章.length > 0) break;
     }
     let 排版 = "<div>" + 文章.join("</div><div>") + "</div>";
+	let pic = 图片[Math.floor(Math.random()*图片.length)];
+	排版 = 排版 + "<br><img src=\"" + pic + "\" style=\"width:100%\">";
     $("#论文").innerHTML = 排版;
 }
 
@@ -148,7 +158,7 @@ function 生成文章(){
 <br>
 <style> 
 body{
-background:#f6f6f6;
+background:#fbfbfb;
 }
 .twt {
     margin-bottom: 10px;
@@ -159,13 +169,13 @@ background:#f6f6f6;
     box-shadow: 0 1px 3px rgba(18,18,18,.1);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-	width: 700px;
+	width: 650px;
 	margin:0 auto;
 }
 </style>
 <div class="twt">
 <img src="https://z3.ax1x.com/2021/07/20/WNlyNQ.png">
-<div style="padding:20px; font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+<div style="padding:16px 20px; padding-top: 0px;font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
     font-size: 15px;
 " id="论文">　</div>
 </div>
