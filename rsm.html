@@ -11,7 +11,7 @@ function randomsort(a, b) { return Math.random()>.5 ? -1 : 1; }
 function con() {
 	var text = document.getElementById("inp"), mess = document.getElementById("mes");
 	var code = text.value, mix = mess.value;
-	var a = code.split("\n");
+	var a = code.split("\n"), num = new Array();
 	a.forEach((item,index)=>{
 		  if(!item){
 			  a.splice(index,1);
@@ -25,14 +25,16 @@ function con() {
 		twt.innerHTML += a[i]+'\n';
 	}
 	a.splice(0, p-1);
+	for (var i = 0; i < a.length; i++) num[i] = i;
+	num.sort(randomsort);
 	for (var i = 0; i < a.length; i++) {
 		a[i] = a[i].replace(/\t/g, "");
-		a[i] = "#define " + mix + i.toString() + "TWT_TEC " + a[i];
+		a[i] = "#define " + mix + num[i].toString() + "TWT_TEC " + a[i];
 	}
 	a.sort(randomsort);
 	for (var i = 0; i < a.length; i++) twt.innerHTML += a[i] + '\n';
 	for (var i = 0; i < a.length; i++) 
-		twt.innerHTML += mix + i.toString() + "TWT_TEC\n";
+		twt.innerHTML += mix + num[i].toString() + "TWT_TEC\n";
 }
 </script>
 <input type="button" onclick="con()" value="Random_Shullfle!">
