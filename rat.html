@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <body>
 <h2>TWT_TEC Rating Master!</h2>
 
-<input id="rk" placeholder="ÄúµÄÅÅÃû"><br>
-<input id="all" placeholder="×ÜÈËÊı"><br>
-<input id="ra" placeholder="³õÊ¼»ı·Ö"><br>
+<input id="rk" placeholder="æ’å"><br>
+<input id="all" placeholder="æ€»äººæ•°"><br>
+<input id="ra" placeholder="åˆå§‹ç§¯åˆ†"><br>
 
 <br>
-<input type="button" onclick="con()" value="¼ÆËã"><br>
+<input type="button" onclick="con()" value="è®¡ç®—"><br>
 <a id = "res"></a>
 
 <script>
@@ -30,12 +31,10 @@
         var rank = document.getElementById("rk").value
         var ra = document.getElementById("ra").value
         if (cnt >= list.length || rank >= list.length)
-            alert("´íÎó£ºÈËÊıÌ«´ó")
+            alert("äººæ•°å¤ªå¤§ï¼")
         var c = rsel(list, cnt)
-        for (var i = 0; i <= 170; i++) c.push(list[i])
+        for (var i = 0; i <= Math.min(170, cnt / 4); i++) c.push(list[i])
         c.sort(cmp)
-        console.log(list.length)
-        for (var i = 0; i <= 10; i++) console.log(c[i])
         var seed = 1;
         for (var i = 0; i < c.length; i++)
             seed += 1 / (1 + Math.pow(10, (ra - c[i]) / 400))
