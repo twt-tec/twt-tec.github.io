@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["twt_werewolf_master_ng"];
