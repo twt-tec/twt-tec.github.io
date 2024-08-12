@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DeathReason","Identity","LifeStatus"],"fn":["check_death","role_map"],"mod":["hunter","responder","villager","werewolf"],"trait":["RoleGroup"]};

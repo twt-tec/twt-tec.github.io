@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["log","roles"],"struct":["Judger"],"type":["RespBoxes","RespBoxesMut"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["NET_ERR"],"enum":["Message"],"fn":["vote"],"struct":["Client"]};

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="基本介绍"><title>twt_werewolf_master_ng - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="twt_werewolf_master_ng" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0 (129f3b996 2024-06-10)" data-channel="1.79.0" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../static.files/storage-e32f0c247825364d.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../twt_werewolf_master_ng/index.html">twt_werewolf_master_ng</a><span class="version">0.2.0</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section><ul class="block"><li><a href="#modules">Modules</a></li><li><a href="#functions">Functions</a></li></ul></section></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../twt_werewolf_master_ng/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Crate <a class="mod" href="#">twt_werewolf_master_ng</a><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><span class="out-of-band"><a class="src" href="../src/twt_werewolf_master_ng/main.rs.html#1-47">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h3 id="基本介绍"><a class="doc-anchor" href="#基本介绍">§</a>基本介绍</h3>
+<p>谭炜谭狼人杀大师 NG 是<a href="https://twt-tec.github.io/">谭炜谭狼人杀</a>的 rust 语言重构版本。<br />
+相比于原先的版本，新一代谭炜谭狼人杀具有以下优点：</p>
+<ol>
+<li><strong>内存安全</strong>。rust 的所有权和生命周期机制保证了内存安全。</li>
+<li><strong>全平台</strong>。用 <code>std::net::TcpStream</code> 替代了原来的 winsock，新版本可以在 Windows 以外的平台运行。</li>
+<li><strong>代码可读性高</strong>。新版本结构设计合理，实现思路清晰，代码可读性大大提高。</li>
+<li><strong>可维护性高</strong>。不同于原先“一镜到底”的实现方式，新版模块划分清晰，将代码拆分到符合逻辑的文件树中。</li>
+<li><strong>文档完整</strong>。代码注释充分，文档完整清晰。</li>
+<li><strong>支持大语言模型</strong>。在老版本发布时，大语言模型还没有出现，使用的是简陋人机。新版本方便接入符合 OpenAI 格式的大语言模型，人机游戏体验大大提升。</li>
+<li><strong>更好的 tui 交互</strong>。新版有进度条和选择列表，提供更好的交互体验。</li>
+</ol>
+<h3 id="文件结构"><a class="doc-anchor" href="#文件结构">§</a>文件结构</h3>
+<ul>
+<li><a href="judger/index.html" title="mod twt_werewolf_master_ng::judger"><code>judger</code></a> 服务器的法官功能。
+<ul>
+<li><a href="judger/roles/index.html" title="mod twt_werewolf_master_ng::judger::roles"><code>roles</code></a> 定义角色的行为。
+<ul>
+<li><a href="judger/roles/villager/index.html" title="mod twt_werewolf_master_ng::judger::roles::villager"><code>villager</code></a>, <a href="judger/roles/hunter/index.html" title="mod twt_werewolf_master_ng::judger::roles::hunter"><code>hunter</code></a>, <a href="judger/roles/werewolf/index.html" title="mod twt_werewolf_master_ng::judger::roles::werewolf"><code>werewolf</code></a> 角色的实现。</li>
+<li><a href="judger/roles/responder/index.html" title="mod twt_werewolf_master_ng::judger::roles::responder"><code>responder</code></a> 回应器，用于回应角色的请求。
+<ul>
+<li><a href="judger/roles/responder/debug_bot/index.html" title="mod twt_werewolf_master_ng::judger::roles::responder::debug_bot"><code>debug_bot</code></a> 用于测试的回应器。只会“好人过”和随机投票。</li>
+<li><a href="judger/roles/responder/doubao_ai/index.html" title="mod twt_werewolf_master_ng::judger::roles::responder::doubao_ai"><code>doubao_ai</code></a> 默认接入豆包大模型 4k 上下文轻量级，也可以接入其它 OpenAI API 格式的大模型。</li>
+<li><a href="judger/roles/responder/human/index.html" title="mod twt_werewolf_master_ng::judger::roles::responder::human"><code>human</code></a> 和人类用户通信。</li>
+<li><a href="judger/roles/responder/widget/index.html" title="mod twt_werewolf_master_ng::judger::roles::responder::widget"><code>widget</code></a> 实现回应器进行投票、讨论的小工具。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="judger/log/index.html" title="mod twt_werewolf_master_ng::judger::log"><code>log</code></a> 生成日志。</li>
+</ul>
+</li>
+<li><a href="player/index.html" title="mod twt_werewolf_master_ng::player"><code>player</code></a> 玩家客户端。
+-<a href="player/comm/index.html" title="mod twt_werewolf_master_ng::player::comm"><code>comm</code></a> 玩家客户端通信组件。
+<ul>
+<li><a href="player/villager/index.html" title="mod twt_werewolf_master_ng::player::villager"><code>villager</code></a>, <a href="player/hunter/index.html" title="mod twt_werewolf_master_ng::player::hunter"><code>hunter</code></a>, <a href="player/werewolf/index.html" title="mod twt_werewolf_master_ng::player::werewolf"><code>werewolf</code></a> 角色的实现。</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用提醒"><a class="doc-anchor" href="#使用提醒">§</a>使用提醒</h3>
+<p>如果你要接入豆包，需要设置环境变量 <code>ENDPOING_ID</code> 和 <code>API_KEY</code>。</p>
+<h3 id="待办清单"><a class="doc-anchor" href="#待办清单">§</a>待办清单</h3>
+<ol>
+<li>实现女巫和预言家。</li>
+<li>实现更多角色</li>
+<li>加入警长功能。</li>
+</ol>
+</div></details><h2 id="modules" class="section-header">Modules<a href="#modules" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="mod" href="judger/index.html" title="mod twt_werewolf_master_ng::judger">judger</a><span title="Restricted Visibility">&nbsp;🔒</span> </div><div class="desc docblock-short">法官。获得服务器端各种设置并主持游戏。</div></li><li><div class="item-name"><a class="mod" href="player/index.html" title="mod twt_werewolf_master_ng::player">player</a><span title="Restricted Visibility">&nbsp;🔒</span> </div><div class="desc docblock-short">玩家端。</div></li></ul><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="fn" href="fn.main.html" title="fn twt_werewolf_master_ng::main">main</a><span title="Restricted Visibility">&nbsp;🔒</span> </div></li></ul></section></div></main></body></html>

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["chat","count_votes","get_votes","make_votelist","max_votes","send_detail","vote"]};
