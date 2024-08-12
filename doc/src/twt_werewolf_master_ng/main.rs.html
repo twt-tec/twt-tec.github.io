@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/main.rs`."><title>main.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="twt_werewolf_master_ng" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0 (129f3b996 2024-06-10)" data-channel="1.79.0" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../twt_werewolf_master_ng/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<a href="#2" id="2">2</a>
+<a href="#3" id="3">3</a>
+<a href="#4" id="4">4</a>
+<a href="#5" id="5">5</a>
+<a href="#6" id="6">6</a>
+<a href="#7" id="7">7</a>
+<a href="#8" id="8">8</a>
+<a href="#9" id="9">9</a>
+<a href="#10" id="10">10</a>
+<a href="#11" id="11">11</a>
+<a href="#12" id="12">12</a>
+<a href="#13" id="13">13</a>
+<a href="#14" id="14">14</a>
+<a href="#15" id="15">15</a>
+<a href="#16" id="16">16</a>
+<a href="#17" id="17">17</a>
+<a href="#18" id="18">18</a>
+<a href="#19" id="19">19</a>
+<a href="#20" id="20">20</a>
+<a href="#21" id="21">21</a>
+<a href="#22" id="22">22</a>
+<a href="#23" id="23">23</a>
+<a href="#24" id="24">24</a>
+<a href="#25" id="25">25</a>
+<a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
+<a href="#28" id="28">28</a>
+<a href="#29" id="29">29</a>
+<a href="#30" id="30">30</a>
+<a href="#31" id="31">31</a>
+<a href="#32" id="32">32</a>
+<a href="#33" id="33">33</a>
+<a href="#34" id="34">34</a>
+<a href="#35" id="35">35</a>
+<a href="#36" id="36">36</a>
+<a href="#37" id="37">37</a>
+<a href="#38" id="38">38</a>
+<a href="#39" id="39">39</a>
+<a href="#40" id="40">40</a>
+<a href="#41" id="41">41</a>
+<a href="#42" id="42">42</a>
+<a href="#43" id="43">43</a>
+<a href="#44" id="44">44</a>
+<a href="#45" id="45">45</a>
+<a href="#46" id="46">46</a>
+<a href="#47" id="47">47</a>
+</pre></div><pre class="rust"><code><span class="doccomment">//! ## 基本介绍
+//! 谭炜谭狼人杀大师 NG 是[谭炜谭狼人杀](https://twt-tec.github.io/)的 rust 语言重构版本。  
+//! 相比于原先的版本，新一代谭炜谭狼人杀具有以下优点：
+//! 1. **内存安全**。rust 的所有权和生命周期机制保证了内存安全。
+//! 1. **全平台**。用 `std::net::TcpStream` 替代了原来的 winsock，新版本可以在 Windows 以外的平台运行。
+//! 1. **代码可读性高**。新版本结构设计合理，实现思路清晰，代码可读性大大提高。
+//! 1. **可维护性高**。不同于原先“一镜到底”的实现方式，新版模块划分清晰，将代码拆分到符合逻辑的文件树中。
+//! 1. **文档完整**。代码注释充分，文档完整清晰。
+//! 1. **支持大语言模型**。在老版本发布时，大语言模型还没有出现，使用的是简陋人机。新版本方便接入符合 OpenAI 格式的大语言模型，人机游戏体验大大提升。
+//! 1. **更好的 tui 交互**。新版有进度条和选择列表，提供更好的交互体验。
+//! ## 文件结构
+//! - [`judger`] 服务器的法官功能。
+//!     - [`roles`](judger::roles) 定义角色的行为。
+//!         - [`villager`](judger::roles::villager), [`hunter`](judger::roles::hunter), [`werewolf`](judger::roles::werewolf) 角色的实现。
+//!         - [`responder`](judger::roles::responder) 回应器，用于回应角色的请求。
+//!             - [`debug_bot`](judger::roles::responder::debug_bot) 用于测试的回应器。只会“好人过”和随机投票。
+//!             - [`doubao_ai`](judger::roles::responder::doubao_ai) 默认接入豆包大模型 4k 上下文轻量级，也可以接入其它 OpenAI API 格式的大模型。    
+//!             - [`human`](judger::roles::responder::human) 和人类用户通信。
+//!             - [`widget`](judger::roles::responder::widget) 实现回应器进行投票、讨论的小工具。
+//!     - [`log`](judger::log) 生成日志。
+//! - [`player`] 玩家客户端。
+//!     -[`comm`](player::comm) 玩家客户端通信组件。
+//!     - [`villager`](player::villager), [`hunter`](player::hunter), [`werewolf`](player::werewolf) 角色的实现。
+//! ## 使用提醒
+//! 如果你要接入豆包，需要设置环境变量 `ENDPOING_ID` 和 `API_KEY`。
+//! ## 待办清单
+//! 1. 实现女巫和预言家。
+//! 2. 实现更多角色
+//! 3. 加入警长功能。
+
+</span><span class="kw">mod </span>judger;
+<span class="kw">mod </span>player;
+<span class="kw">use </span>inquire::Select;
+<span class="kw">use </span>judger::Judger;
+<span class="kw">use </span>player::Player;
+
+<span class="kw">fn </span>main() {
+    <span class="macro">println!</span>(<span class="string">"TwT Werewolf Master v{}"</span>, <span class="macro">env!</span>(<span class="string">"CARGO_PKG_VERSION"</span>));
+    <span class="kw">let </span>opt = <span class="macro">vec!</span>[<span class="string">"服务器"</span>, <span class="string">"玩家"</span>];
+    <span class="kw">let </span>mes = <span class="string">"请选择模式"</span>;
+    <span class="kw">let </span>res = Select::new(mes, opt).prompt().unwrap();
+    <span class="kw">match </span>res {
+        <span class="string">"服务器" </span>=&gt; Judger::new().init(),
+        <span class="string">"玩家" </span>=&gt; Player::new().init(),
+        <span class="kw">_ </span>=&gt; (),
+    }
+}
+</code></pre></div></section></main></body></html>
