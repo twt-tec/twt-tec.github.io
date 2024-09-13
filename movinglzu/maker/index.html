@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>关卡制作工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="update">
+        导入为图片原始大小，使用鼠标滚轮调整。
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="imageContainer"></div>
+    </div>
+    <div>
+        <button id="withdraw">撤销添加</button>
+        <button id="setup">设为初始位置</button>
+    </div>
+    <div>
+
+        <button id="accept_group">添加一组通过条件</button>
+        <button id="withdraw_group">撤销一组通过条件</button>
+        <button id="withdraw_rule">撤销一条通过条件</button>
+    </div>
+    <div>
+        输入新条件中的两个对象编号。
+        <input id="first_object" />
+        <input id="second_object" placeholder="-1 代表鼠标点击位置" />
+        <button id="accept_rule">添加一条通过条件</button>
+    </div>
+    <div>
+        <button id="set_topleft">设置最新一则条件的相对左上位置</button>
+        <button id="set_rightdown">设置最新一则条件的相对右下位置</button>
+    </div>
+    
+    <div id="group">
+        <button id="removeShower">隐藏相对位置区域</button>
+    </div>
+    <div>
+        <textarea id="message" type="text" ></textarea>
+        <button id="gen">获得结果</button>
+    </div>
+    <div id="border"></div>
+    <div id="cursor"></div>
+    <div id="shower"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
